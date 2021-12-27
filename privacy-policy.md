@@ -1,6 +1,8 @@
+---
 layout: page
 title: "Privacy Policy"
 permalink: /privacy-policy/
+---
 
 ## Privacy Policy
 This privacy policy applies to (1) Aba Lights and (2) RoboScore for FTC, referred to as the Apps.
