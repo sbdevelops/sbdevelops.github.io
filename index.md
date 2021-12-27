@@ -12,4 +12,5 @@ Reimagining the new tab page. Available now for Google Chrome.
 
 #### App Privacy Policy
 [View the Privacy Policy](/privacy-policy)
+
 Applies to Aba Lights and RoboScore for FTC.
