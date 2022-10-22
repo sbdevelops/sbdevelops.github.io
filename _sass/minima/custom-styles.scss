@@ -1,0 +1,31 @@
+// Placeholder to allow defining custom styles that override everything else.
+// (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+.site-header {
+  border-top: 0;
+  border-bottom: 1px solid $border-color-01;
+  min-height: $spacing-unit * 1.865;
+  line-height: $base-line-height * $base-font-size * 2.25;
+
+  // Positioning context for the mobile navigation icon
+  position: relative;
+}
+
+.header-top {
+  height: 5px;
+  //margin-bottom: 2px;
+  //background: linear-gradient(to left, #e66465, #9198e5);
+  background: linear-gradient(to right, #2fd688, #43ace6);
+  //background: linear-gradient(to right, #B3A369, #003057);
+
+  &:not(.hidden) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .hidden {
+    visibility: hidden;
+    position: initial;
+  }
+}

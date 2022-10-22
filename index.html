@@ -1,0 +1,93 @@
+---
+layout: home
+<!--title: Home-->
+<!--image: /assets/images/block.png-->
+---
+
+<head>
+    <style>
+        .apptitle {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: start;
+
+            height: 4em;
+
+            /*border: 2px solid green;*/
+        }
+
+        .apptitle * {
+            margin-bottom: 0;
+        }
+
+        .apptitle img {
+
+            max-height: 3em;
+
+
+            aspect-ratio: 1;
+            margin-right: 12px;
+
+            border: 1px solid black;
+            border-radius: 20%;
+        }
+
+        .apptitle p {
+            border: 2px solid blue;
+            line-height: 1em;
+        }
+
+        .appiconimage:hover {
+            scale: 1.1;
+        }
+
+        .appiconimage {
+            transition: scale 0.2s ease-in-out;
+            animation-duration: 1s;
+        }
+
+        .appstorelink {
+            opacity: 0.0;
+
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .appheader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .appheader:hover .appstorelink {
+            opacity: 1.0;
+        }
+
+
+    </style>
+</head>
+<h1>About Me</h1>
+<blockquote>A technology enthusiast and self-directed learner, Steven is a first-year computer science undergraduate at Georgia Tech with a keen attention to detail who employs his passion for exploring to create innovative solutions to challenging problems.</blockquote>
+
+<br>
+
+<h1>Apps</h1>
+{% for app in site.apps %}
+<div class="app">
+    <div class="appheader">
+        <div class="apptitle">
+            <img class="appiconimage" src="{{ app.icon }}" alt="{{ app.title }}">
+            <h2>{{ app.title }}</a></h2>
+        </div>
+        {% if app.appstorelink %}}
+        <div class="app-store-link">
+            <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" height="40px">
+        </div>
+        {% else %}
+            <p><i>Coming soon</i></p>
+        {% endif %}
+    </div>
+    {{ app.content }}
+
+</div>
+{% endfor %}
