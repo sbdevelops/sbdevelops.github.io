@@ -67,27 +67,31 @@ layout: home
     </style>
 </head>
 <h1>About Me</h1>
-<blockquote>A technology enthusiast and avid learner, Steven is a first-year computer science undergraduate at Georgia Tech with a keen attention to detail who employs his passion for exploring to create innovative solutions to challenging problems.</blockquote>
+<blockquote>A technology enthusiast and avid learner, Steven is a second-year computer science undergraduate at Georgia Tech with a keen attention to detail who employs his passion for exploring to create innovative solutions to challenging problems.</blockquote>
 
 <br>
 
 <h1>Apps</h1>
 {% for app in site.apps %}
-<div class="app">
-    <div class="appheader">
-        <div class="apptitle">
-            <img class="appiconimage" src="{{ app.icon }}" alt="{{ app.title }}">
-            <h2>{{ app.title }}</a></h2>
-        </div>
-        {% if app.appstorelink %}}
-        <div class="app-store-link">
-            <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" height="40px">
-        </div>
-        {% else %}
-            <p><i>Coming soon</i></p>
-        {% endif %}
-    </div>
-    {{ app.content }}
+    {% if app.visible %}
+        <div class="app">
+            <div class="appheader">
+                <div class="apptitle">
+                    <img class="appiconimage" src="{{ app.icon }}" alt="{{ app.title }}">
+                    <h2>{{ app.title }}</a></h2>
+                </div>
+                {% if app.appstorelink %}
+                <div class="app-store-link">
+                    <a href="{{ app.appstorelink }}">
+                        <img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" height="40px">
+                    </a>
+                </div>
+                {% else %}
+                    <p><i>Coming soon</i></p>
+                {% endif %}
+            </div>
+            {{ app.content }}
 
-</div>
+        </div>
+    {% endif %}
 {% endfor %}
